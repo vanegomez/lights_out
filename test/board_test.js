@@ -19,15 +19,19 @@ describe('board', function() {
   it('compiles to five rows', function() {
     var board = new Board();
     board.compileBoard();
-    assert.equal(board.rows.length, 5)
+    assert.equal(board.rows.length, 5);
+    board.rows.forEach(function(row) {
+      assert.equal(row.length, 5);
+    })
   });
 
   it('has rows made up of lights', function() {
     var board = new Board();
     board.compileBoard();
-    var row = board.rows[0];
-    row.forEach(function(light) {
-      assert.instanceOf(light, Light)
-    });
+    board.rows.forEach(function(row) {
+      row.forEach(function(light) {
+        assert.instanceOf(light, Light);
+      })
+    })
   });
 });
