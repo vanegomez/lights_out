@@ -1,0 +1,7 @@
+.light {
+  border: 0.1em solid red;
+}
+
+.light-on {
+  background: yellow;
+}
