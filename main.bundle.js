@@ -46,7 +46,19 @@
 
 	'use strict';
 
-	__webpack_require__(1);
+	var Game = __webpack_require__(1);
+
+	$('document').ready(function () {
+	  var game = new Game();
+	  var lights = _.flatten(game.board);
+	  renderGame(lights);
+	});
+
+	function renderGame(lights) {
+	  for (i = 0; i < lights.length; i++) {
+	    $('#light-' + i).append("I'm light # " + (i + 1));
+	  }
+	}
 
 /***/ },
 /* 1 */
@@ -54,7 +66,12 @@
 
 	'use strict';
 
-	__webpack_require__(2);
+	var Board = __webpack_require__(2);
+	var _ = __webpack_require__(4);
+
+	function Game() {
+	  this.board = new Board().compileBoard;
+	}
 
 /***/ },
 /* 2 */
@@ -6943,24 +6960,7 @@
 	if(moduleExports){(freeModule.exports = _)._ = _;} // Export for Rhino with CommonJS support.
 	else {freeExports._ = _;}}else { // Export for a browser or Rhino.
 	root._ = _;}}).call(undefined);
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)(module), (function() { return this; }())))
-
-/***/ },
-/* 5 */
-/***/ function(module, exports) {
-
-	"use strict";
-
-	module.exports = function (module) {
-		if (!module.webpackPolyfill) {
-			module.deprecate = function () {};
-			module.paths = [];
-			// module.parent = undefined by default
-			module.children = [];
-			module.webpackPolyfill = 1;
-		}
-		return module;
-	};
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"/Users/Vane/turing/4module/lights_out/node_modules/webpack/buildin/module.js\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()))(module), (function() { return this; }())))
 
 /***/ }
 /******/ ]);
