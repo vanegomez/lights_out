@@ -16,7 +16,7 @@ describe('light', function() {
     assert.equal(light.turnedOn, false);
   });
   
-  it('be turned on', function() {
+  it('can be turned on', function() {
     var light = new Light();
     assert.equal(light.turnedOn, false);
     light.changeStatus();
