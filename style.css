@@ -1,5 +1,5 @@
 .light {
-  border: 0.1em solid red;
+  border: 0.1em solid black;
   height: 10em;
   margin-bottom:5px;
 }
@@ -14,7 +14,7 @@
   margin: auto;
 }
 
-.row {
+.column {
   width: 19%;
   display: inline-block;
 }
