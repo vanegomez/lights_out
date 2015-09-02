@@ -1,7 +1,20 @@
 .light {
   border: 0.1em solid red;
+  height: 10em;
+  margin-bottom:5px;
 }
 
 .light-on {
   background: yellow;
+}
+
+.container {
+  width: 80%;
+  text-align: center;
+  margin: auto;
+}
+
+.row {
+  width: 19%;
+  display: inline-block;
 }
