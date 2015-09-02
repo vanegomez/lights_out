@@ -36,6 +36,7 @@
   "dependencies": {
     "babel-runtime": "^5.8.20",
     "jquery": "^2.1.4",
-    "lodash": "^3.10.1"
+    "lodash": "^3.10.1",
+    "lodash-transpose": "^0.1.1"
   }
 }
