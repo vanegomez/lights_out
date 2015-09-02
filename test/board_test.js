@@ -11,25 +11,18 @@ describe('board', function() {
     assert(new Board());
   });
 
-  it('is empty when created', function() {
+  it('has five columns when created', function() {
     var board = new Board();
-    assert.equal(board.rows.length, 0)
-  });
-  
-  it('compiles to five rows', function() {
-    var board = new Board();
-    board.compileBoard();
-    assert.equal(board.rows.length, 5);
-    board.rows.forEach(function(row) {
-      assert.equal(row.length, 5);
+    assert.equal(board.length, 5);
+    board.forEach(function(column) {
+      assert.equal(column.length, 5);
     })
   });
-
-  it('has rows made up of lights', function() {
+  
+  it('has columns made up of lights', function() {
     var board = new Board();
-    board.compileBoard();
-    board.rows.forEach(function(row) {
-      row.forEach(function(light) {
+    board.forEach(function(column) {
+      column.forEach(function(light) {
         assert.instanceOf(light, Light);
       })
     })
