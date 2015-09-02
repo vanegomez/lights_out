@@ -19,9 +19,9 @@ describe('light', function() {
   it('can be turned on', function() {
     var light = new Light();
     assert.equal(light.turnedOn, false);
-    light.changeStatus();
+    light.toggleStatus();
     assert.equal(light.turnedOn, true);
-    light.changeStatus();
+    light.toggleStatus();
     assert.equal(light.turnedOn, false);
   })
 });
