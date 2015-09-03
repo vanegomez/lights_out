@@ -1,0 +1,57 @@
+@-webkit-keyframes neon1 {
+  from {
+    text-shadow: 0 0 10px #fff,
+    0 0 20px  #fff,
+    0 0 30px  #fff,
+    0 0 40px  #FF1177,
+    0 0 70px  #FF1177,
+    0 0 80px  #FF1177,
+    0 0 100px #FF1177,
+    0 0 150px #FF1177;
+  }
+  to {
+    text-shadow: 0 0 5px #fff,
+    0 0 10px #fff,
+    0 0 15px #fff,
+    0 0 20px #FF1177,
+    0 0 35px #FF1177,
+    0 0 40px #FF1177,
+    0 0 50px #FF1177,
+    0 0 75px #FF1177;
+  }
+}
+
+body {
+  background: url("MPLS+Connectivity.jpg") no-repeat center;
+  background-size: cover;
+}
+
+.light {
+  border: 0.1em solid black;
+  height: 8em;
+  width: 8em;
+  background: #6F6F70;
+  opacity: 0.5;
+  background: repeating-linear-gradient(45deg, #2b2b2b 0%, #2b2b2b 10%, #222222 0%, #222222 50%) 0 / 15px 15px;
+}
+
+.light-on {
+  background: yellow;
+  opacity: 1;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  transition: all 0.5s;
+  -webkit-animation: neon1 1.5s ease-in-out infinite alternate;
+  -moz-animation: neon1 1.5s ease-in-out infinite alternate;
+  animation: neon1 1.5s ease-in-out infinite alternate;
+}
+
+.container {
+  width: 80%;
+  text-align: center;
+  margin: auto;
+}
+
+.column {
+  display: inline-block;
+}
