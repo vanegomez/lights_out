@@ -33,6 +33,32 @@ describe('light', function() {
     var renderedLight = document.getElementsByClassName('light');
 
     assert.isNotNull(renderedLight);
+    assert.equal(light.turnedOn, false);
+  });
+
+  it('when rendered adds light-on class', function() {
+    var light = new Light();
+    var targetDiv = $('#test-game');
+
+    light.render(targetDiv);
+    light.toggleStatus();
+
+    var lightOn = document.getElementsByClassName('light-on');
+    assert.isNotNull(lightOn);
+    assert.equal(light.turnedOn, true);
+  });
+
+  it('when rendered removes light-on class ', function() {
+    var light = new Light();
+    var targetDiv = $('#test-game');
+
+    light.render(targetDiv);
+    light.toggleStatus();
+    light.toggleStatus();
+
+    var lightOff = document.getElementsByClassName('light-on');
+    assert.isNotNull(lightOff);
+    assert.equal(light.turnedOn, false);
   });
 });
 
