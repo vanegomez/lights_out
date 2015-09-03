@@ -23,5 +23,25 @@ describe('light', function() {
     assert.equal(light.turnedOn, true);
     light.toggleStatus();
     assert.equal(light.turnedOn, false);
-  })
+  });
+
+  it('should render', function() {
+    var light = new Light();
+    var targetDiv = $('#test-game');
+    light.render(targetDiv);
+
+    assert.equal(light.turnedOn, false);
+
+  });
 });
+
+//describe('game', function() {
+//  it('should render itself', function() {
+//    var game = new Game();
+//    var targetDiv = $('#test-game');
+//    game.render(targetDiv)
+//
+//    var renderedGame = document.querySelector('.game')
+//
+//    assert.isNotNull(renderedGame);
+//  });
