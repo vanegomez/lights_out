@@ -24,31 +24,26 @@ describe('light', function() {
     light.toggleStatus();
     assert.equal(light.turnedOn, false);
   });
-
-  it('should render', function() {
+  
+  it('should default to a status of off', function() {
     var light = new Light();
-    var targetDiv = $('#test-game');
-    light.render(targetDiv);
-    //var renderedLight = document.querySelector('.light');
-    var renderedLight = document.getElementsByClassName('light');
-
-    assert.isNotNull(renderedLight);
-
-    //expect($(renderedLight)).to.have.$class("light")
-
-    //expect($("<div class='foo bar' />"))
-    //  .to.have.$class("foo").and
-    //  .to.have.$class("bar");
+    
+    assert.equal(light.x, null);
+    assert.equal(light.y, null);
   });
+  
+  it('can have an x value assigned to it', function() {
+    var light = new Light();
+    light.x = 1;
+
+    assert.equal(light.x, 1);
+  });
+  
+  it('can have a y value assigned to it', function() {
+    var light = new Light();
+    light.y = 1;
+    
+    assert.equal(light.y, 1);
+  })
 });
 
-//describe('game', function() {
-//  it('should render itself', function() {
-//    var game = new Game();
-//    var targetDiv = $('#test-game');
-//    game.render(targetDiv)
-//
-//    var renderedGame = document.querySelector('.game')
-//
-//    assert.isNotNull(renderedGame);
-//  });
