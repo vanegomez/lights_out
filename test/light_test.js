@@ -29,9 +29,16 @@ describe('light', function() {
     var light = new Light();
     var targetDiv = $('#test-game');
     light.render(targetDiv);
+    //var renderedLight = document.querySelector('.light');
+    var renderedLight = document.getElementsByClassName('light');
 
-    assert.equal(light.turnedOn, false);
+    assert.isNotNull(renderedLight);
 
+    //expect($(renderedLight)).to.have.$class("light")
+
+    //expect($("<div class='foo bar' />"))
+    //  .to.have.$class("foo").and
+    //  .to.have.$class("bar");
   });
 });
 
