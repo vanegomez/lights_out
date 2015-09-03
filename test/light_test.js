@@ -1,5 +1,6 @@
 const assert = require('chai').assert;
-const Light = require('../lib/light');
+const $      = require('jquery');
+const Light   = require('../lib/light');
 
 describe('light', function() {
   
@@ -29,26 +30,9 @@ describe('light', function() {
     var light = new Light();
     var targetDiv = $('#test-game');
     light.render(targetDiv);
-    //var renderedLight = document.querySelector('.light');
     var renderedLight = document.getElementsByClassName('light');
 
     assert.isNotNull(renderedLight);
-
-    //expect($(renderedLight)).to.have.$class("light")
-
-    //expect($("<div class='foo bar' />"))
-    //  .to.have.$class("foo").and
-    //  .to.have.$class("bar");
   });
 });
 
-//describe('game', function() {
-//  it('should render itself', function() {
-//    var game = new Game();
-//    var targetDiv = $('#test-game');
-//    game.render(targetDiv)
-//
-//    var renderedGame = document.querySelector('.game')
-//
-//    assert.isNotNull(renderedGame);
-//  });
