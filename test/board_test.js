@@ -99,26 +99,28 @@ describe('board', function() {
     assert.isNotNull(renderedColumn);
   });
 
-  it("columns should toggle it's lights", function() {
+  xit("columns should toggle it's lights", function() {
     var column = new Column();
     var targetDiv = $('#test-game');
     column.render(targetDiv);
 
-    var renderedColumn = document.getElementsByClassName('column');
-    assert.isNotNull(renderedColumn);
+    var light = column.forEach(function(column) {
+      column.toggleLight(0);
+    });
+
+    assert.equal(light.y, true);
   });
 
-  it('columns should get all Lights', function() {
+  it('should get all Lights in one column', function() {
     var board = new Board();
     var targetDiv = $('#test-game');
     board.render(targetDiv);
 
-    var allLights = [];
+    var lights = [];
     board.columns.forEach(function(column) {
-      allLights.push(column.getLights());
-      return _.flatten(allLights);
-      assert.equal(allLights.length, 5);
+      lights.push(column.getLights());
     });
+    assert.equal(lights.length, 5);
   });
 });
 
