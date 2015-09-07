@@ -69,5 +69,21 @@ describe('game', function() {
 
     assert.equal(game.allLightsOff(), true)
   });
+
+  it("should randomize it's lights", function() {
+    var game = new Game();
+    var targetDiv = $('#test-game');
+    game.render(targetDiv);
+
+    game.randomizeLights();
+
+    var lights = game.getAllLights();
+
+    var lightsOn = _.map(lights, function(light) {
+      return light.turnedOn === true
+    });
+
+    assert.notEqual(lightsOn.length, 0)
+  });
 });
 

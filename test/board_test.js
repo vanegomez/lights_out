@@ -99,12 +99,11 @@ describe('board', function() {
     assert.isNotNull(renderedColumn);
   });
 
-  xit("columns should toggle it's lights", function() {
+  it("columns should toggle it's lights", function() {
     var column = new Column();
-    column.forEach(function(column) {
-      var light = column.toggleLight(0);
-      assert.equal(light.turnedOn, true);
-    });
+    var light = column.toggleLight(2);
+    
+    assert.equal(light.turnedOn, true);
   });
 
   it('should get all Lights in one column', function() {
