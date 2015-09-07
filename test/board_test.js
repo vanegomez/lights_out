@@ -90,13 +90,36 @@ describe('board', function() {
     assert.equal(sixthTestedLight.turnedOn, false);
   });
 
-  it('columns should render', function () {
+  it('columns should render', function() {
     var column = new Column();
     var targetDiv = $('#test-game');
     column.render(targetDiv);
 
     var renderedColumn = document.getElementsByClassName('column');
     assert.isNotNull(renderedColumn);
+  });
+
+  it("columns should toggle it's lights", function() {
+    var column = new Column();
+    var targetDiv = $('#test-game');
+    column.render(targetDiv);
+
+    var renderedColumn = document.getElementsByClassName('column');
+    assert.isNotNull(renderedColumn);
+  });
+
+  it('columns should get all Lights', function() {
+    var board = new Board();
+    var column = new Column();
+    var targetDiv = $('#test-game');
+    board.render(targetDiv);
+
+    var allLights = [];
+    board.columns.forEach(function(column) {
+      allLights.push(column.getLights());
+      return _.flatten(allLights);
+      assert.equal(allLights.length, 25);
+    });
   });
 });
 
