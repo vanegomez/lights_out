@@ -90,5 +90,19 @@ describe('game', function() {
 
     assert.notEqual(lightsOn.length, 0)
   });
+
+  it('should increment clicks', function() {
+    var game = new Game();
+    var targetDiv = $('#test-game');
+    game.render(targetDiv);
+
+    assert.equal(game.clicks, 0);
+
+    game.incrementClicks();
+    assert.equal(game.clicks, 1);
+
+    game.incrementClicks();
+    assert.equal(game.clicks, 2);
+  });
 });
 
