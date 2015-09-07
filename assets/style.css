@@ -1,5 +1,5 @@
 body {
-  background: url("MPLS+Connectivity.jpg") no-repeat center;
+  background: url("bg.jpg") no-repeat center;
   background-size: cover;
 }
 
@@ -55,4 +55,10 @@ h3 {
   font-family: 'Play', sans-serif;
   font-size: 36px;
   color: yellow;
+}
+
+#new-game {
+  background-color: #2b2b2b;
+  font-family: 'Play', sans-serif;
+  color: #FFFF00;
 }
