@@ -56,3 +56,9 @@ h3 {
   font-size: 36px;
   color: yellow;
 }
+
+#new-game {
+  background-color: #2b2b2b;
+  font-family: 'Play', sans-serif;
+  color: #FFFF00;
+}
