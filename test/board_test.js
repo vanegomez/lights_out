@@ -110,7 +110,6 @@ describe('board', function() {
 
   it('columns should get all Lights', function() {
     var board = new Board();
-    var column = new Column();
     var targetDiv = $('#test-game');
     board.render(targetDiv);
 
@@ -118,7 +117,7 @@ describe('board', function() {
     board.columns.forEach(function(column) {
       allLights.push(column.getLights());
       return _.flatten(allLights);
-      assert.equal(allLights.length, 25);
+      assert.equal(allLights.length, 5);
     });
   });
 });
