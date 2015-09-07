@@ -72,6 +72,8 @@ describe('game', function() {
     var targetDiv = $('#test-game');
     game.render(targetDiv);
 
+    game.checkGameOver();
+
     assert.equal(game.allLightsOff(), true)
   });
 
