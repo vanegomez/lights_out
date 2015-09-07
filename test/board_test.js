@@ -101,14 +101,10 @@ describe('board', function() {
 
   xit("columns should toggle it's lights", function() {
     var column = new Column();
-    var targetDiv = $('#test-game');
-    column.render(targetDiv);
-
-    var light = column.forEach(function(column) {
-      column.toggleLight(0);
+    column.forEach(function(column) {
+      var light = column.toggleLight(0);
+      assert.equal(light.turnedOn, true);
     });
-
-    assert.equal(light.y, true);
   });
 
   it('should get all Lights in one column', function() {
