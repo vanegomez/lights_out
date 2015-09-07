@@ -20,19 +20,24 @@ describe('game', function() {
     assert.isNotNull(renderedGame);
   });
 
-  xit('should wipeout', function() {
+  it('should wipeout', function() {
     var game = new Game();
     var targetDiv = $('#test-game');
     game.render(targetDiv);
-
+    var lightsCount = document.getElementsByClassName('light').length;
+    var columnsCount = document.getElementsByClassName('column').length;
+    var boardCount = document.getElementsByClassName('board').length;
     game.wipeOut();
-    var removedClassBoard = document.getElementsByClassName('.board');
-    var removedClassColumn = document.getElementsByClassName('.column');
-    var removedClassLight = document.getElementsByClassName('.light');
+    var remainingBoardCount = document.getElementsByClassName('board').length;
+    var remainingColumnsCount = document.getElementsByClassName('column').length;
+    var remainingLightsCount = document.getElementsByClassName('light').length;
 
-    //assert.include(removedClassBoard, false);
-    assert.notInclude(document,'.board');
-    assert.isNotNull(removedClassLight);
+    assert.notEqual(boardCount, remainingBoardCount);
+    assert.equal(remainingBoardCount, 0);
+    assert.notEqual(columnsCount, remainingColumnsCount);
+    assert.equal(remainingColumnsCount, 0);
+    assert.notEqual(lightsCount, remainingLightsCount);
+    assert.equal(remainingLightsCount, 0);
   });
 
   it("should toggle it's lights", function() {
