@@ -1,7 +1,6 @@
 const assert = require('chai').assert;
 const $      = require('jquery');
 const Board  = require('../lib/board');
-const Column  = require('../lib/board');
 const Light  = require('../lib/light');
 
 describe('board', function() {
@@ -91,20 +90,22 @@ describe('board', function() {
   });
 
   it('columns should render', function() {
-    var column = new Column();
+    var board= new Board();
     var targetDiv = $('#test-game');
-    column.render(targetDiv);
+    board.columns[0].render(targetDiv);
 
     var renderedColumn = document.getElementsByClassName('column');
     assert.isNotNull(renderedColumn);
   });
 
-  xit("columns should toggle it's lights", function() {
-    var column = new Column();
-    column.forEach(function(column) {
-      var light = column.toggleLight(0);
-      assert.equal(light.turnedOn, true);
-    });
+  it("columns should toggle it's lights", function() {
+    var board= new Board();
+    var targetDiv = $('#test-game');
+    board.render(targetDiv);
+    var column = board.columns[0];
+
+    column.toggleLight(2);
+    assert.equal(column.lights[2].turnedOn, true);
   });
 
   it('should get all Lights in one column', function() {
