@@ -1,5 +1,7 @@
 # Game Time Starter Kit
 
+[Play Lights Out!](http://vanegomez.github.io/lights_out/)
+
 To install the dependencies:
 
 ```
